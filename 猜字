@@ -1,0 +1,81 @@
+<！doctype html>
+<html lang =“ zh-cn”>
+<头>
+    <meta charset =“ utf-8”>
+    <meta name =“ viewport” content =“ width =设备宽度，初始尺度= 1.0”>
+    <title>猜数字小游戏</title>
+    <样式>
+        身体 {
+            字体家庭：Arial，sans-serif;
+            文字平衡：中心；
+            背景色：＃f0f0f0;
+            填充：50px;
+        }
+        .game-container {
+            背景色：#FFF;
+            填充：20px;
+            边界拉迪乌斯：10px;
+            盒子阴影：0 0 10px RGBA（0，0，0，0.1）;
+            显示：内联块；
+        }
+        输入[type =“ number”] {
+            填充：10px;
+            字体大小：16px;
+            宽度：100px;
+        }
+        按钮{
+            填充：10px 20px;
+            字体大小：16px;
+            保证金顶：10px;
+            光标：指针；
+        }
+        。信息{
+            保证金顶：20px;
+            字体大小：18px;
+            颜色：＃333;
+        }
+    </style>
+</head>
+<身体>
+
+<div class =“ game-container”>
+    <h1> </h1>
+    <p>我已经想好了一个1到100之间的数字，你能猜出来吗？ </p>
+    <输入type =“数字”
+    <按钮onclick =“ checkguess（）”>猜一下</button>
+    <p class =“消息” id =“消息”> </p>
+</div>
+
+<script>
+    //生成一个1到100之间的随机数
+    const RandomNumber = Math.floor（Math.random（） * 100） + 1;
+    让尝试= 0;
+
+    功能检查（检查）{）{
+        const猜测= document.getElementById（''）;
+        const message = document.getElementById（''）;
+        const userguess = parseint （猜测。值）;
+
+        如果（ iSnan （（（（Userguess）|| USERGUESS <1 || USERGUESS> 100）{
+            message.textContent ='请输入一个有效的数字（1-100）！';
+            返回;
+        }
+
+        尝试++;
+
+        如果（（（userguess <andurnumber）{
+            message.textContent ='太小了，再试一次！';
+        } 否则（如果（ userguess> RandomNumber）{
+            message.textContent ='太大了，再试一次！';
+        }别的{
+            messages.textContent =`恭喜你！你猜对了！用了 $ {overs}次尝试。
+            guessInput.disabled = true;
+        }
+
+        guessInput.value ='';
+        guessInput.focus（）;
+    }
+</script>
+
+</body>
+</html>
